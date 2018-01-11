@@ -1,0 +1,13 @@
+VI.1 O(b)
+VI.2 O(b)
+VI.3 O(1)
+VI.4 O(a/b)
+VI.5 O(log n)
+VI.6 O(sqrt n)
+VI.7 O(N), where N is the number of nodes.
+VI.8 O(N), where N is the number of nodes.
+VI.9 O(N^2), where N is the size of the array.
+VI.10 O(log n)
+VI.11 O(k * 26 ^ k)
+VI.12 O((a+b) log b) , where a and b are the respective lengths of the arrays.
+
