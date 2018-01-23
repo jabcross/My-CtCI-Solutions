@@ -3,6 +3,7 @@
 using namespace std;
 
 // Uses array of bools to check if the character has been seen before.
+// Runtime: O(len(str))
 bool is_unique(string str){
     bitset<256> chars;
     for (auto chr: str){
