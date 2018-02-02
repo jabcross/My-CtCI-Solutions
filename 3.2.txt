@@ -1,0 +1,11 @@
+I'd mantain a second value on each stack node, with the minimum value from this node until the root.
+
+On push, we compare the new value with our top value's minimum.
+
+* If greater than or equal, just push and copy the minimum.
+* If smaller, set both the value and the minimum as the new value.
+
+On pop, we just return the top value and destroy the node.
+
+When calling min, we return the minimum value of the top node.
+

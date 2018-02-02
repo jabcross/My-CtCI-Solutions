@@ -40,7 +40,7 @@ int main(){
     zero_matrix(v);
 
     assert(u == v);
-    
+
     cout << "Test Passed" << endl;
     return 0;
 }

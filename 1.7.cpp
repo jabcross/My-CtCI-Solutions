@@ -15,6 +15,7 @@ class Pixel {
     };
 };
 
+// For testing.
 bool compare_matrixes(vector<vector<Pixel> > &a, vector<vector<Pixel> > &b){
     if (a.size() != b.size()) return false;
     for (int i = 0; i < a.size(); i++){
@@ -31,10 +32,10 @@ bool compare_matrixes(vector<vector<Pixel> > &a, vector<vector<Pixel> > &b){
 }
 
 // Rotates values counter-clockwise.
-// Runtime: O(n*n)
+// Runtime: O(n*n) = BCR
 void rotate(vector<vector<Pixel>> &matrix){
     assert(matrix.size() > 0);
-    // Todo: assert that all vectors have same size.
+    // Todo: assert that this is a square matrix
     for (int i = 0; i < (matrix.size()+2)/2 - 1; i++){
         int l = i, r = matrix.size()-i-1;
         for (int j = l; j < r; j++){
