@@ -1,0 +1,21 @@
+It should be 1 to 1.
+
+Chance of having a son: S = 1/2
+Chance of having a daughter: S = 1/2
+
+The expected number of daughters per couple is 1.
+
+The expected number of sons per couple is:
+
+0 sons: D = 1/2
+1 son: S * D = 1/4
+2 sons: S * S * D = 1/8
+3 sons: S * S * S * D = 1/16
+...
+k sons: S ^ k * D = 1/2^(k+1)
+
+Infinite sum: 1/2 + 1/4 + 1/8 + ... = 1.
+
+So, the expected gender ratio is 1 daughter to 1 son.
+
+In fact, the ratio should be the same even if the strategy is reversed (keep having daughters until having a son), for the same argument.

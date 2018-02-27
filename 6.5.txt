@@ -1,0 +1,7 @@
+Fill the 5-quart jug. Transfer its contents onto the 3-quart jug until it is full.
+
+The remaining water in the 5-quart jug amounts to 2 quarts.
+
+Dump the contents of the 3-quart jug and transfer the 2 quarts to it.
+
+Fill the 5-quart jug again and transfer its contents into the partially filled 3-quart jug until it is full, again. Now the 3-quarts jug is full and the 5-quarts jug has 4 quarts in it.

@@ -1,0 +1,13 @@
+Identify the bottles from 1 to 20. In the scale, measure, all together:
+
+1 pill from bottle 1
+2 pills from bottle 2
+3 pills from bottle 3
+
+and so on.
+
+If all pills weighted 1.0 gram, you would expect 1 + 2 + ... + 19 + 20 = 210$ grams.
+
+Since some bottle k has pills that weight an extra 0.1 gram, and you measured k of these pills, the measured value will be 210 + k * 0.1.
+
+As such, if the measured value was m grams, the number of the bottle with heavier pills is (m - 210) * 10.

@@ -1,0 +1,15 @@
+Let's do a binary search.
+
+Number the test strips.
+
+On the first day, test the first 512 sodas on strip 1.
+On the second day, test the first 256 sodas of each previous partition on strip 2. (That is, bottle 1 to 256 and bottle 513 to 769).
+On the third day, test the first halves of each of the partitions of the previous day (wether they were tested on or not).
+
+Repeat until you are testing every other soda on strip 10.
+
+This will basically give you the number, in binary, of the poisoned bottle, after 10 + 7 days (10 days for each test, 7 days for the last test to return.)
+
+You could skip testing the sodas that were cleared after day 7.
+
+This works because 10 bits can represent numbers from 0 to 1023, in which the number of bottles fits.

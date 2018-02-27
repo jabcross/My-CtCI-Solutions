@@ -1,0 +1,15 @@
+If p is 1 or 0, it trivially doesn't matter.
+
+The probability of scoring two of three baskets for non-integer probability p is:
+
+p * p * (1-p) * (3! / (2! * 1!)) = (p^2 - p^3) * 3
+
+The probability of scoring three baskets is p^3.
+
+So, it's only worth picking game 1 if
+
+p > 3 * p^2 - 2 * p^3
+
+, whose non-trivial root is 0.5.
+
+If p > 0.5, game 2 is better. If p < 0.5, game 1 is better.

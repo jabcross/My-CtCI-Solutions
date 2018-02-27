@@ -1,0 +1,9 @@
+Assuming each person is completely logical:
+
+If there is 1 blue-eyed person, they will notice no other blue-eyed people, and so will correctly assume that they are the singular blue-eyed person. They will leave after 1 day.
+
+If there are 2 blue-eyed persons, either will notice exactly one other blue-eyed person. At this time, they won't be able to determine their own eye color, since, from their point of view, there could be only one blue-eyed person. They therefore wait the first day. In the morning, they will notice that nobody left. Therefore, there can't be only one blue-eyed person, or they would have left in the first day. Since they only see one other blue-eyed person, they correctly assume that they must be the other.
+
+Inductively, each person can be certain that that they have blue eyes if they see k-1 blue-eyed people after k days. All blue-eyed people would have left the day before, otherwise.
+
+Therefore, it takes k days to evacuate k blue-eyed people.

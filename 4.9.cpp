@@ -21,53 +21,58 @@ class BinaryTreeNode {
     }
 };
 
-list<list<int>> weave(list<int> a, list<int> b){
-    auto rv = list<list<int> >();
+void weave(list<int> a, list<int> b, list<list<int> > &target){
     if (a.empty()) {
-        rv.push_front(b);
-        return rv;
+        target.push_front(b);
+        return;
     }
     if (b.empty()) {
-        rv.push_front(a);
-        return rv;
+        target.push_front(a);
+        return;
     }
     auto a_head = a.front();
     a.pop_front();
-    auto x = weave(a,b);
-    for (auto &i: x) i.push_front(a_head);
+    list<list<int> > tmp;
+    weave(a,b,tmp);
+    for (auto &i: tmp) i.push_front(a_head);
+    target.splice(target.end(), tmp);
+
+    tmp.clear();
     a.push_front(a_head);
     auto b_head = b.front();
     b.pop_front();
-    auto y = weave(a,b);
-    for (auto &i: y) i.push_front(b_head);
 
-    rv.splice(rv.end(),x);
-    rv.splice(rv.end(),y);
-    return rv;
+    weave(a,b, tmp);
+    for (auto &i: tmp) i.push_front(b_head);
+    
+    target.splice(target.end(),tmp);
 }
 
-list<list<int>> weave_lists(list<list<int>> l, list<list<int>> r){
-    auto rv = list<list<int>>();
+void weave_lists(list<list<int>> &l, list<list<int>> &r, list<list<int> > &target){
+    list<list<int> > tmp;
     for (auto i: l){
         for (auto j: r){
-            rv.splice(rv.end(),weave(i,j));
+            tmp.clear();
+            weave(i,j,tmp);
+            target.splice(target.end(),tmp);
         }
     }
-    return rv;
+    return;
 }
 
-list<list<int> > get_possible_source_arrays(BinaryTreeNode* root){
+void get_possible_source_arrays(BinaryTreeNode* root, list<list<int> > &target){
     if (!root) {
-        list<list<int>> rv = list<list<int>>();
-        rv.push_front(list<int>());
-        return rv;
+        target.push_front(list<int>());
+        return;
     }
-    auto l = get_possible_source_arrays(root->left);
-    auto r = get_possible_source_arrays(root->right);
+    list<list<int> > tmp_a, tmp_b, tmp_c;
+    get_possible_source_arrays(root->left, tmp_a);
+    get_possible_source_arrays(root->right, tmp_b);
 
-    auto rv = weave_lists(l,r);
-    for (auto &i: rv) i.push_front(root->value);
-    return rv;
+    weave_lists(tmp_a, tmp_b, tmp_c);
+    for (auto &i: tmp_c) i.push_front(root->value);
+    target.splice(target.end(),tmp_c);
+    return;
 }
 
 int main(){
@@ -80,9 +85,10 @@ int main(){
     refs[4] = refs[5]->addLeftNode(4);
     refs[6] = refs[5]->addRightNode(6);
 
-    auto rv = get_possible_source_arrays(refs[3]);
+    list<list<int> > output;
+    get_possible_source_arrays(refs[3], output);
 
-    for (auto i: rv){
+    for (auto i: output){
         cout << "( ";
         for (auto j: i){
             cout << j << " ";

@@ -1,0 +1,4 @@
+In a regular chessboard, adjacent squares have opposite colors, such that there are 32 light squares and 32 black squares.
+
+However, two opposing corners always have the same color, and therefore our modified chessboard has 2 fewer light (or dark) squares. Whenever we place a domino, we cover two adjacent squares with opposite colors, which means the last two uncovered squares will have the same color, no matter the order or locations in which we lay down our dominos. Therefore, the squares won't be adjacent, and we can't lay down the 31th domino to fully cover the board.
+

@@ -1,0 +1,15 @@
+We want to optimize for the worst-case.
+
+The square root strategy is as follows: drop an egg every 10 floors until it breaks. Drop the second egg on every floor starting from the highest safe one until the second one breaks.
+
+This takes, in the worst case, 19 drops on floor 100 (or 2 * sqrt(height)).
+
+For a K-high building, the intervals in the first part should be of sqrt(K) floors.
+
+This can be further optimized. We can choose the intervals in the first part so that the total number of drops remains constant. That is, the higher up the interval is, the more drops of the first egg it took, and the shorter it should be, to compensate in second-egg throws.
+
+We want a simple decreasing sequence of lengths. This way, if the first egg breaks in the 1st floor, the second egg will be dropped at most X-1 times. If the first egg breaks in the Kth floor, the second egg will be dropped at most X-K times.
+
+The sum of increasing sequences is n * (n+1) / 2. We want this to be 100; therefore, the lenght of the first interval is around sqrt(2 * 100) ~ 14.
+
+This turns out to be the answer. The expected number of drops is O(sqrt(n)).

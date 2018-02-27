@@ -1,0 +1,22 @@
+An expression in the form a & b == 0 checks to see if a and b do not share a 1
+in any bit.
+
+The only (non-negative) integers that satisfy n & (n-1) == 0 are powers of 2,
+such as 1, 2, 4, 8, 16, since all other numbers share at least the most
+significant bit with their predecessors.
+
+3 & 2 = 011 & 010 = 010 != 0
+4 & 3 = 100 & 011 = 000 == 0
+5 & 4 = 101 & 100 = 100 != 0
+6 & 5 = 110 & 101 = 100 != 0
+7 & 6 = 111 & 110 = 110 != 0
+8 & 7 = 1000 & 0111 = 000 = 0
+
+In general, negative numbers won't pass this test, since they always share the
+sign bit.
+
+Adittionally, 0 passes this test (since 0b000...000 - 1 = 0b111...111);
+
+The smallest possible number in the representation, 0b1000...000, will also pass
+this test if underflow checks aren't enforced (it underflows to the biggest)
+integer, 0b0111....111).

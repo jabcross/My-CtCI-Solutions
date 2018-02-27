@@ -1,0 +1,13 @@
+The 1st locker will only be opened once and never touched again.
+The 2nd (2^1) will be opened and closed exactly once.
+The 3rd (3^1) locker as well.
+It's apparent that every prime-numbered locker will be open.
+The 4th (2^2) will be opened, closed (in the 2nd run) and then opened again (in the 4th run).
+The 6th will be opened, closed in the 2nd run, opened in the 3rd run and closed in the 6th run.
+
+Therefore, the locker will be open if its number of divisors is odd.
+
+However, every divisor has a pair, except possibly the exact square root. So,
+the only opened lockers are numbered by perfect squares.
+
+Those are 1, 4, 9, 16, 25, 36, 49, 64, 81 and 100. 10 numbers.

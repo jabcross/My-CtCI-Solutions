@@ -1,0 +1,10 @@
+The only occasion where there won't be a collision is when all ants decide to move in the same direction. If n is the number of ants (and vertices, for that matter), that probability is 
+
+2 * 0.5^n
+
+The probability of the collision to actually happen is, therefore, 
+
+1 - 2 * 0.5^n.
+
+The bigger the number of vertices, the bigger the number of collisions.
+
