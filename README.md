@@ -1,2 +1,2 @@
 # My-CtCI-Solutions
-My solutions to Cracking the Coding Interview 6th Edition problems. I won't be transcribing the questions.
+My solutions to problems from the book Cracking the Coding Interview, 6th Edition. I won't be transcribing the question headers.
