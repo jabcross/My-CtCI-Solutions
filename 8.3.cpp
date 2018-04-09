@@ -17,9 +17,9 @@ int magic_index_indistinct(vector<int> &array, int l, int r){
 if (l >= r) return -1;
     int m = (l+r)/2;
     if (array[m] == m) return m;
-    int left = magic_index(array, l, m);
+    int left = magic_index(array, l, min(array[m],m));
     if (left != -1) return left;
-    return magic_index(array, m, r);
+    return magic_index(array, max(array[m],m) + 1, r);
 }
 
 int main(){
