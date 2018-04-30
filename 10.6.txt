@@ -1,0 +1,5 @@
+Sorting a Big File
+
+We can take inspiration from non-comparison-based sorting algorithms such as radixsort. We can split the file into 26 files, each with lines starting with the same letter. We can repeat this strategy for the second letters, third letters and so on until the file sizes are more comfortable for in-RAM sorting. After that, all we have to do is concatenate the files back.
+
+If disk space is at a premium, we can do this in steps, shrinking the original file as we sort out the contents. The inverse operation can be done at the end.

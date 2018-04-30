@@ -1,0 +1,5 @@
+We have 32000 bits, and 32000 values.
+
+Pass through the array, marking the bits indexed by the values. If you double-mark a bit, this value is a duplicate.
+
+A similar problem involves XORing every integer from 1 to the maximum value in the array, and also every value in the array. Each non-duplicated value should cancel out, leaving the XOR of all duplicates. If we have only one duplicate, this should be its value. This is not what's asked in this problem, but is an interesting O(1)-extra space solution to the single duplicate problem.

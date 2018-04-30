@@ -1,0 +1,17 @@
+Missing Int
+
+We must provide an integer that is not found in a file with four billion non-negative integers.
+
+We can store 8 * 2^30 == 8 billion bits in our memory.
+
+We just go trough the file, marking our memory's ith bit each time we encounter integer i. When we get to the end, we just sweep our memory for any unset bits. The position of each unset bit marks an integer that isn't in the file.
+
+Follow-up:
+
+Now we have less memory, but also less integers. Also, the values in the file are all distinct.
+
+We have one billion distinct numbers, and 8 * 10 * 2^20 ~~ 100 million bits.
+
+We might have to do a few passes. We pass once testing only numbers from 0 to 100 million, and continue if we set every bit. Then we check from 100 million to 200 million, and so on and so forth. This way, we'll do at most 10 passes.
+
+
