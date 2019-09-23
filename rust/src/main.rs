@@ -15,6 +15,7 @@ fn main() {
         ex16_17::test();
         ex16_18::test();
         ex16_19::test();
+        ex16_20::test();
     }
 
     println!("Done");
