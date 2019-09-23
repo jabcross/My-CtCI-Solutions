@@ -2,9 +2,15 @@
 
 fn check_permutation(string_a: &str, string_b: &str)->bool {
     // Expects ascii characters. O(a + b) time, O(1) extra space 
+
+    // Similar to ex1.1's solution, we keep one character counter for each
+    // string. In the end, we compare the counters; permutations should
+    // generate the same counter array.
+
     if string_a.len() != string_b.len() {
         return false;
     }
+    
     let mut char_counter_a: [u8; 256] = [0; 256];
     let mut char_counter_b: [u8; 256] = [0; 256];    
     for character in string_a.bytes(){
@@ -29,5 +35,6 @@ pub fn test() {
     assert!(check_permutation("a", "a") == true);
     assert!(check_permutation("ab", "ba") == true);
     assert!(check_permutation("aa", "ab") == false);
+    assert!(check_permutation("aa", "a") == false);
     println!("Ex 1.2 ok!");
 }

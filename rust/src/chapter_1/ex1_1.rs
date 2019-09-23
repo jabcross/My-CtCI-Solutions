@@ -1,7 +1,12 @@
-// 1.1 Is Unique
+// 1.1 Is Uniqu
 
 fn is_unique(string: &String)->bool {
     // Expects ascii characters. O(n) time, O(1) extra space
+    
+    // This solution keeps a table that keeps track of the number of times
+    // a character has been seen. If it finds a character that has been seen
+    // before, it returns false.
+
     let mut bitset: [u8; 256] = [0; 256];
     for character in string.bytes(){
         let index: usize = character as usize;
@@ -17,6 +22,9 @@ fn is_unique(string: &String)->bool {
 
 fn is_unique_no_extra_space(string: &String)->bool {
     // Expects ascii characters. O(n^2), 0 extra space
+
+    // For each character, scan the string until here to check for duplicates.
+
     for index in 1..string.len() {
         let slice = &string.as_bytes()[0..index-1];
         if slice.contains(&string.as_bytes()[index]){
