@@ -12,6 +12,7 @@ fn main() {
     {   
         use crate::chapter_16::*;
         ex16_16::test();
+        ex16_17::test();
     }
 
     println!("Done");
