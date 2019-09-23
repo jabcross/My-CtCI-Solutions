@@ -1,4 +1,4 @@
-// 1.1 Is Uniqu
+// 1.1 Is Unique
 
 fn is_unique(string: &String)->bool {
     // Expects ascii characters. O(n) time, O(1) extra space
