@@ -1,6 +1,14 @@
 // 16.16 Sub Sort
 
 fn sub_sort(array: &[i32]) -> (usize, usize) {
+
+    // Returns inclusive bounds of minimal subarray that, if sorted,
+    // makes so that the whole array is sorted.
+    // Returns (0,0) if already sorted.
+    
+    // O(n) time, O(3n) space. I suspect it could be improved to O(n) time,
+    // O(1) space.
+
     if array.len() == 0 {
         return (0,0);
     }
