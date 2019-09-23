@@ -1,6 +1,6 @@
 I would grow one stack from the beginning of the array, the second stack from the end, and the third stack from the middle, alternating the sides and keeping track of the boundaries.
 
-If the array is called M, and the stacks are calles A, B and C, we'd have:
+If the array is called M, and the stacks are called A, B and C, we'd have:
 
 * A[i] = M[i],
 * B[i] = M[M.size()-1-i], and
