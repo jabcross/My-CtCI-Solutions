@@ -1,4 +1,5 @@
 mod chapter_1;
+mod chapter_16;
 
 fn main() {
     {   
@@ -7,5 +8,11 @@ fn main() {
         ex1_2::test();
         ex1_3::test();
     }
+
+    {   
+        use crate::chapter_16::*;
+        ex16_16::test();
+    }
+
     println!("Done");
 }
