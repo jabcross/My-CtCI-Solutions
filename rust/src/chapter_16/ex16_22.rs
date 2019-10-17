@@ -99,7 +99,7 @@ impl State {
     }
 }
 
-fn printKMoves(k: u32)->String {
+fn print_k_moves(k: u32)->String {
     let mut state = State::new();
 
     for _ in 0..k {state.iterate()}
@@ -107,7 +107,7 @@ fn printKMoves(k: u32)->String {
 }
 
 pub fn test(){
-    assert!(printKMoves(8) == &"
+    assert!(print_k_moves(8) == &"
  ##
 #<#
 ## 

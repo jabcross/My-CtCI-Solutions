@@ -6,10 +6,10 @@
 
 // This expects that the original generator is truly random.
 
-use rand::prelude::*;
+use rand::random;
 
 fn rand7() -> usize {
-    rand::random::<usize>() % 7
+    random::<usize>() % 7
 }
 
 fn rand7_to_rand5(r7: usize)->usize {
