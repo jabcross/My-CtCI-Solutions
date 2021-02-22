@@ -58,7 +58,7 @@ pub fn test() {
         .collect::<Vec<_>>();
 
     println!(
-        "Ex 16.23 error: {:?}, max_recursions: {}, average_recursions: {}",
+        "Ex 16.23 deviation: {:?}, max_recursions: {}, average_recursions: {}",
         error,
         max_calls,
         total_calls as f64 / sample_size as f64
