@@ -6,3 +6,5 @@ pub mod ex16_20;
 pub mod ex16_21;
 pub mod ex16_22;
 pub mod ex16_23;
+pub mod ex16_24;
+pub mod ex16_25;
