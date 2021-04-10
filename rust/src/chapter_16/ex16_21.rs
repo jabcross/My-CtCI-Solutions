@@ -5,7 +5,7 @@
 
 // First we scan both vectors to calculate their sum, and subtract them
 // to get the difference d. We need to transfer half this difference from the
-// vector with least sum to the other vector, and so we are looking for a 
+// vector with least sum to the other vector, and so we are looking for a
 // pair that is d / 2 apart. If this difference is odd, we
 // can fail, since the value we must transfer is fractional.
 
@@ -15,12 +15,12 @@
 // Takes O(len(a) + len(b)) time, O(len(b)) extra space. We can swap A and B
 // after calculating the sums to take O(min(len(a),len(b))) instead.
 
-fn sum(vector: &[i32])->i32{
+fn sum(vector: &[i32]) -> i32 {
     use std::ops::Add;
     vector.iter().fold(0, i32::add)
 }
 
-fn sum_swap(a: &[i32], b:&[i32]) -> Option<(i32, i32)> {
+fn sum_swap(a: &[i32], b: &[i32]) -> Option<(i32, i32)> {
     let sum_a = sum(a);
     let sum_b = sum(b);
     let difference = sum_a - sum_b;
@@ -32,9 +32,8 @@ fn sum_swap(a: &[i32], b:&[i32]) -> Option<(i32, i32)> {
     let half_difference = difference / 2;
 
     use std::collections::HashSet;
-    use std::iter::FromIterator;
 
-    let set: HashSet<i32> = HashSet::from_iter(b.iter().cloned());
+    let set: HashSet<i32> = b.iter().cloned().collect();
 
     for value_in_a in a {
         if set.contains(&(value_in_a - half_difference)) {
@@ -45,16 +44,16 @@ fn sum_swap(a: &[i32], b:&[i32]) -> Option<(i32, i32)> {
     None
 }
 
-fn test_instance(a: &[i32], b:&[i32])-> bool {
-    if let Some((from_a, from_b)) = sum_swap(a,b){
-        return sum(a) - from_a + from_b ==  sum(b) - from_b + from_a;
-    }
-    else {
+fn test_instance(a: &[i32], b: &[i32]) -> bool {
+    if let Some((from_a, from_b)) = sum_swap(a, b) {
+        sum(a) - from_a + from_b == sum(b) - from_b + from_a
+    } else {
         false
     }
 }
 
-pub fn test(){
+#[test]
+fn test() {
     assert!(test_instance(&[4, 1, 2, 1, 1, 2], &[3, 6, 3, 3]));
     println!("Ex 16.21 ok!");
 }

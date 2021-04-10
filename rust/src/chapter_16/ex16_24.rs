@@ -61,14 +61,15 @@ where
     }
 }
 
-pub fn test() {
+#[test]
+fn test() {
     assert!({
         find_pairs_with_sum(&[1, 2, 3, 4, 5, 5, 6, 7, 8, 9], 10)
             .iter()
             .cloned()
             .collect::<Vec<(usize, usize)>>()
             .apply(|mut x| {
-                x.sort();
+                x.sort_unstable();
                 x
             })
             .iter()

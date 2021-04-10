@@ -1,5 +1,9 @@
 // 16.26 Calculator
 
+// Does two passes, first executing any multiplications and divisions as soon as
+// they are seen, and then executing the additions and subtractions in the next
+// pass.
+
 use regex::Regex;
 
 enum Ops {
@@ -7,6 +11,7 @@ enum Ops {
     Minus,
 }
 
+#[allow(clippy::trivial_regex)]
 fn calculator(expr: &str) -> f64 {
     let number_re = Regex::new(r"^[0-9]+").unwrap();
     let plus_re = Regex::new(r"^[+]").unwrap();
@@ -79,7 +84,8 @@ fn calculator(expr: &str) -> f64 {
     acc
 }
 
-pub fn test() {
-    assert!(calculator("2*3+5/6*3+15") == 23.5);
+#[test]
+fn test() {
+    assert!((calculator("2*3+5/6*3+15") - 23.5).abs() < f64::EPSILON);
     println!("Ex 16.26 ok!");
 }

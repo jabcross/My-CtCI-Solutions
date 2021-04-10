@@ -35,7 +35,8 @@ fn rand7(num_calls: usize) -> (usize, usize) {
     }
 }
 
-pub fn test() {
+#[test]
+fn test() {
     let mut histogram: [f64; 7] = [0.0; 7];
     let sample_size: usize = 100_000;
     let mut max_calls = 0;

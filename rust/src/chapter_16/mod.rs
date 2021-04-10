@@ -1,3 +1,7 @@
+#![allow(clippy::needless_range_loop)]
+#![allow(clippy::len_zero)]
+#![allow(clippy::comparison_chain)]
+
 pub mod ex16_16;
 pub mod ex16_17;
 pub mod ex16_18;

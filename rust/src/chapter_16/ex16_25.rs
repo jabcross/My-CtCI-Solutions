@@ -111,7 +111,8 @@ impl LRUCache {
     }
 }
 
-pub fn test() {
+#[test]
+fn test() {
     let mut cache = LRUCache::new(3);
     cache.set(1, 1);
     cache.set(2, 2);
