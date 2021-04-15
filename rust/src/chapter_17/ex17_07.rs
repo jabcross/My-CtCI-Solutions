@@ -1,7 +1,7 @@
 // 17.7 Baby names
 
 // Uses the UnionSet data structure, which has ammortized O(1)
-// insertion and retrieval.
+// insertion and retrieval. O(n) time, O(n) extra space.
 
 use std::collections::HashMap;
 

@@ -10,3 +10,7 @@ pub mod ex17_04;
 pub mod ex17_05;
 pub mod ex17_06;
 pub mod ex17_07;
+pub mod ex17_08;
+pub mod ex17_09;
+pub mod ex17_10;
+pub mod ex17_12;

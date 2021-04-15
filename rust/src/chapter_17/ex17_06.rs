@@ -135,13 +135,14 @@ fn proof(n: usize) -> usize {
 }
 
 #[test]
+#[ignore = "proof is very slow"]
 fn test() {
     let mut cache = HashMap::new();
     count_2s(20, &mut cache);
     let mut i = 1;
     for _ in 0..8 {
         let a = count_2s(i - 1, &mut cache);
-        let b = proof(i - 1);
+        let b = proof(i - 1); // Very slow !
         assert!(a == b);
         i *= 10;
     }

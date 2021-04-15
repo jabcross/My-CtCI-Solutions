@@ -68,8 +68,8 @@ fn test() {
         ("a1", 2),
         ("a1aaa", 2),
         ("1aaaa", 2),
-        ("aaaaa1", 2),
-        ("aaaa1a", 2),
+        ("aaaaa1", 2), //FDSAFSD	FDFDSFA
+        ("aaaa1a", 2), //DSAFSDFDSFASD	TJDSLAFSD
     ];
 
     for &(test, size) in tests.iter() {
