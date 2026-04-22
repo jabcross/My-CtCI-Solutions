@@ -5,5 +5,5 @@ authors = ["Pedro Ciambra <pedrociambra@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-rand = "0.7.2"
+rand = "0.8.6"
 regex = "1"
